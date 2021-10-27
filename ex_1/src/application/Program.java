@@ -10,16 +10,22 @@ public class Program {
 		double totalSum = 0.0;
 		int count = 0;
 		
-		System.out.print("Digite um número: ");
+		System.out.print("Digite um nÃºmero: ");
 		double randomNumber = sc.nextDouble();
-		
-		totalSum += randomNumber;
-		count += 1;
+
+		if(randomNumber < 0) {
+			System.out.print("1Â° nÃºmero negativo, algoritmo interrompido.");
+			System.exit(0);
+		}
+		else {
+			totalSum += randomNumber;
+			count += 1;
+		}
 		
 		sc.nextLine();
 		
 		while (randomNumber >= 0) {
-			System.out.print("Digite outro número: ");
+			System.out.print("Digite outro nÃºmero: ");
 			randomNumber = sc.nextDouble();
 			if(randomNumber < 0) {
 				break;
@@ -31,9 +37,8 @@ public class Program {
 		
 		double avg = totalSum / count;
 		
-		System.out.printf("Média dos valores digitados: %.2f", avg);
+		System.out.printf("MÃ©dia dos valores digitados: %.2f", avg);
 		
 		sc.close();
 	}
-
 }
