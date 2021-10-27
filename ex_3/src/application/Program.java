@@ -11,43 +11,60 @@ public class Program {
 		double sumNotes = 0.0;
 		double avgNotes = 0.0;
 		
-		System.out.print("Digite o código do aluno: ");
+		System.out.print("Digite o cÃ³digo do aluno: ");
 		int studentCode = sc.nextInt();
 		
 		while(studentCode != 0) {
 			
-			System.out.print("Digite a 1° nota do aluno: ");
+			System.out.print("Digite a 1Â° nota do aluno: ");
 			notes = sc.nextDouble();
 			sc.nextLine();
 			
-			sumNotes += notes;
+			if(notes < 0 || notes > 10) {
+				System.out.print("Nota invÃ¡lida");
+				break;
+			}
+			else {
+				sumNotes += notes;
+			}
 			
-			System.out.print("Digite a 2° nota do aluno: ");
+			System.out.print("Digite a 2Â° nota do aluno: ");
 			notes = sc.nextDouble();
 			sc.nextLine();
 			
-			sumNotes += notes;
+			if(notes < 0 || notes > 10) {
+				System.out.print("Nota invÃ¡lida");
+				break;
+			}
+			else {
+				sumNotes += notes;
+			}
 			
-			System.out.print("Digite a 3° nota do aluno: ");
+			System.out.print("Digite a 3Â° nota do aluno: ");
 			notes = sc.nextDouble();
 			sc.nextLine();
 			
-			sumNotes += notes;
+			if(notes < 0 || notes > 10) {
+				System.out.print("Nota invÃ¡lida");
+				break;
+			}
+			else {
+				sumNotes += notes;
+			}
 			
 			avgNotes = sumNotes / 3.0;
 			
-			System.out.printf("Média das notas do aluno %d: %.2f%n", studentCode, avgNotes);
+			System.out.printf("MÃ©dia das notas do aluno %d: %.2f%n", studentCode, avgNotes);
 			
 			System.out.println();
 			
 			sumNotes = 0.0;
 			avgNotes = 0.0;
 			
-			System.out.print("Digite outro código de aluno: ");
+			System.out.print("Digite outro cÃ³digo de aluno: ");
 			studentCode = sc.nextInt();
 		}
 		
 		sc.close();
 	}
-
 }
