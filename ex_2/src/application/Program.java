@@ -20,7 +20,10 @@ public class Program {
 		int numberChoice = sc.nextInt();
 		sc.nextLine();
 		
-		if(numberChoice == 1) {
+		if(numberChoice <= 0 || numberChoice > 6) {
+			System.out.printf("Opção inválida.%n");
+		}
+		else if(numberChoice == 1) {
 			totalVotesForCandidate1 += 1;
 		}
 		else if (numberChoice == 2) {
@@ -45,7 +48,11 @@ public class Program {
 			numberChoice = sc.nextInt();
 			sc.nextLine();
 			
-			if(numberChoice == 1) {
+			if(numberChoice <= 0 || numberChoice > 6) {
+				System.out.printf("Opção inválida.%n");
+				break;
+			}
+			else if(numberChoice == 1) {
 				totalVotesForCandidate1 += 1;
 			}
 			else if (numberChoice == 2) {
@@ -63,9 +70,6 @@ public class Program {
 			else if(numberChoice == 6){
 				totalBlankVotes += 1;
 			}
-			else {
-				continue;
-			}
 		}
 		
 		System.out.printf("Total de votos para o candidato 1: %d%n", totalVotesForCandidate1);
@@ -77,5 +81,4 @@ public class Program {
 		
 		sc.close();
 	}
-
 }
