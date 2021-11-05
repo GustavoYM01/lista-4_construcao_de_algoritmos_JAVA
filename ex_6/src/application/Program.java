@@ -9,13 +9,17 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		int totalSum = 0;
 		
-		System.out.print("Digite um número inteiro: ");
+		System.out.print("Digite um nÃºmero inteiro: ");
 		int randomNumber = sc.nextInt();
+		
+		if(randomNumber < 0) {
+			totalSum += randomNumber;
+		}
 		
 		sc.nextLine();
 		
 		while(randomNumber != 0) {
-			System.out.print("Digite outro número inteiro: ");
+			System.out.print("Digite outro nÃºmero inteiro: ");
 			randomNumber = sc.nextInt();
 			
 			sc.nextLine();
@@ -23,14 +27,10 @@ public class Program {
 			if(randomNumber < 0) {
 				totalSum += randomNumber;
 			}
-			else {
-				continue;
-			}	
 		}
 		
-		System.out.printf("Somatório dos números negativos: %d%n", totalSum);
+		System.out.printf("SomatÃ³rio dos nÃºmeros negativos: %d%n", totalSum);
 
 		sc.close();
 	}
-
 }
